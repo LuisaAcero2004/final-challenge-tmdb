@@ -1,4 +1,5 @@
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
@@ -6,9 +7,6 @@ import pages.*;
 import utilities.Browser;
 import utilities.BrowserFactory;
 import utilities.SetProperties;
-
-
-import java.time.Duration;
 
 public class UITestsSuite {
 
@@ -21,7 +19,7 @@ public class UITestsSuite {
     private SetProperties setProperties;
 
     private String listName = "This is the list name";
-    private String listDescription = "This is the list descriptionnnnnnnnnnn";
+    private String listDescription = "This is the list drtggggui";
     private String movieName = "La lista de Schindler";
     private String idMovie = "424";
 
@@ -55,16 +53,22 @@ public class UITestsSuite {
         userPage.goLists();
         listsPage.newList();
         listDetailsPage.createNewList(listName,listDescription);
+
+        Assert.assertEquals(listDetailsPage.getListName(),listName);
     }
 
     @Test(dependsOnMethods = {"createList"})
     public void addMovieList() throws InterruptedException {
         listDetailsPage.addMovieList(movieName);
+
+        Assert.assertTrue(listDetailsPage.getMovieName().contains(movieName));
     }
 
     @Test(dependsOnMethods = {"createList","addMovieList"})
     public void deleteMovieList() throws InterruptedException {
         listDetailsPage.deleteMovieList(idMovie);
+
+        Assert.assertEquals(listDetailsPage.getResultsContent(),"There are no items added to this list.");
     }
 
 
