@@ -1,8 +1,6 @@
 package utilities;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-
 import java.nio.file.Paths;
 
 public class ChromeBrowser implements Browser {
