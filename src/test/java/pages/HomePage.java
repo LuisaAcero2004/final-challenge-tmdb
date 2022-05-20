@@ -4,8 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.time.Duration;
-
 
 public class HomePage extends BasePage{
     public HomePage(WebDriver driver){
@@ -16,8 +14,8 @@ public class HomePage extends BasePage{
     private WebElement LoginButton;
 
     public void goLogin(){
-
         LoginButton.click();
+        log.logInfo("Click on Login Button performed");
     }
 
 

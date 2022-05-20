@@ -17,6 +17,7 @@ public class UserPage extends BasePage{
 
     public void goLists(){
         listsButton.click();
+        log.logInfo("Click on the Lists button performed");
     }
 
 }

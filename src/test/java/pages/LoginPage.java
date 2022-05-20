@@ -3,7 +3,6 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import utilities.SetProperties;
 
 public class LoginPage extends BasePage{
 
@@ -22,7 +21,10 @@ public class LoginPage extends BasePage{
 
     public void login(String username,String password){
         usernameText.sendKeys(username);
+        log.logInfo("Username entered in the text box");
         passwordText.sendKeys(password);
+        log.logInfo("Password entered in the text box");
         loginButton.click();
+        log.logInfo("Click on the Login button performed");
     }
 }

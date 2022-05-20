@@ -1,0 +1,53 @@
+2022-05-20T14:54:25,110 [main] INFO  (Log.java:12) - Opening "https://www.themoviedb.org/" in Edge browser
+2022-05-20T14:54:25,139 [main] INFO  (Log.java:12) - Starting Login
+2022-05-20T14:54:25,891 [main] INFO  (Log.java:12) - Click on Login Button performed
+2022-05-20T14:54:30,361 [main] INFO  (Log.java:12) - Finishing Login
+2022-05-20T14:54:30,362 [main] INFO  (Log.java:12) - *** STARTING TEST CASES SUITE EXECUTION ***
+2022-05-20T14:54:30,406 [main] INFO  (Log.java:16) - *** Starting Test case Create List execution ***
+2022-05-20T14:54:31,649 [main] INFO  (Log.java:12) - List name entered in the text box
+2022-05-20T14:54:31,741 [main] INFO  (Log.java:12) - List description entered in the text box
+2022-05-20T14:54:31,792 [main] INFO  (Log.java:12) - Click on Next button performed
+2022-05-20T14:54:32,609 [main] INFO  (Log.java:12) - Obtining 
+2022-05-20T14:54:32,611 [main] INFO  (Log.java:12) - Assertion performed
+2022-05-20T14:54:32,611 [main] INFO  (Log.java:21) - *** Finishing Test case Create List execution ***
+2022-05-20T14:54:32,615 [main] INFO  (Log.java:16) - *** Starting Test case Add a movie to a list execution ***
+2022-05-20T14:54:32,676 [main] INFO  (Log.java:12) - Movie name entered in the text box
+2022-05-20T14:54:33,285 [main] INFO  (Log.java:12) - Click on the selected movie performed
+2022-05-20T14:54:33,622 [main] INFO  (Log.java:12) - Assertion performed
+2022-05-20T14:54:33,622 [main] INFO  (Log.java:21) - *** Finishing Test case Add a movie to a list execution ***
+2022-05-20T14:54:33,623 [main] INFO  (Log.java:16) - *** Starting Test case Delete an existing movie in the list execution ***
+2022-05-20T14:54:33,665 [main] INFO  (Log.java:12) - Click on the Delete button performed
+2022-05-20T14:54:35,147 [main] INFO  (Log.java:12) - Assertion performed
+2022-05-20T14:54:35,147 [main] INFO  (Log.java:21) - *** Finishing Test case Delete an existing movie in the list execution ***
+2022-05-20T14:54:35,915 [main] INFO  (Log.java:12) - Closing Edge browser
+2022-05-20T14:54:35,915 [main] INFO  (Log.java:12) - *** FINISHING TEST CASES SUITE EXECUTION ***
+2022-05-20T15:12:31,793 [main] INFO  (Log.java:12) - Opening "https://www.themoviedb.org/" in Edge browser
+2022-05-20T15:12:31,834 [main] INFO  (Log.java:12) - Starting Login
+2022-05-20T15:12:32,274 [main] INFO  (Log.java:12) - Click on Login Button performed
+2022-05-20T15:12:32,317 [main] INFO  (Log.java:12) - Username entered in the text box
+2022-05-20T15:12:32,372 [main] INFO  (Log.java:12) - Password entered in the text box
+2022-05-20T15:12:35,716 [main] INFO  (Log.java:12) - Click on the Login button performed
+2022-05-20T15:12:35,716 [main] INFO  (Log.java:12) - Finishing Login
+2022-05-20T15:12:35,716 [main] INFO  (Log.java:12) - *** STARTING TEST CASES SUITE EXECUTION ***
+2022-05-20T15:12:35,770 [main] INFO  (Log.java:16) - *** Starting Test case Create List execution ***
+2022-05-20T15:12:36,619 [main] INFO  (Log.java:12) - Click on the Lists button performed
+2022-05-20T15:12:37,144 [main] INFO  (Log.java:12) - Click on the Create button performed
+2022-05-20T15:12:37,204 [main] INFO  (Log.java:12) - List name entered in the text box
+2022-05-20T15:12:37,319 [main] INFO  (Log.java:12) - List description entered in the text box
+2022-05-20T15:12:37,375 [main] INFO  (Log.java:12) - Click on Next button performed
+2022-05-20T15:12:38,117 [main] INFO  (Log.java:12) - Getting List name from the header
+2022-05-20T15:12:38,119 [main] INFO  (Log.java:12) - Assertion performed
+2022-05-20T15:12:38,120 [main] INFO  (Log.java:21) - *** Finishing Test case Create List execution ***
+2022-05-20T15:12:38,123 [main] INFO  (Log.java:16) - *** Starting Test case Add a movie to a list execution ***
+2022-05-20T15:12:38,191 [main] INFO  (Log.java:12) - Movie name entered in the text box
+2022-05-20T15:12:38,816 [main] INFO  (Log.java:12) - Click on the selected movie performed
+2022-05-20T15:12:38,989 [main] INFO  (Log.java:12) - Getting Movie name text
+2022-05-20T15:12:38,989 [main] INFO  (Log.java:12) - Assertion performed
+2022-05-20T15:12:38,990 [main] INFO  (Log.java:21) - *** Finishing Test case Add a movie to a list execution ***
+2022-05-20T15:12:38,991 [main] INFO  (Log.java:16) - *** Starting Test case Delete an existing movie in the list execution ***
+2022-05-20T15:12:39,037 [main] INFO  (Log.java:12) - Click on the Delete button performed
+2022-05-20T15:12:40,441 [main] INFO  (Log.java:12) - Getting the empty list text
+2022-05-20T15:12:40,441 [main] INFO  (Log.java:12) - Assertion performed
+2022-05-20T15:12:40,441 [main] INFO  (Log.java:21) - *** Finishing Test case Delete an existing movie in the list execution ***
+2022-05-20T15:12:41,231 [main] INFO  (Log.java:12) - Closing Edge browser
+2022-05-20T15:12:41,232 [main] INFO  (Log.java:12) - *** FINISHING TEST CASES SUITE EXECUTION ***

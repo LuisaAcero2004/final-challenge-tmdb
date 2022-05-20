@@ -14,7 +14,9 @@ public class ListsPage extends BasePage{
     WebElement createListButton;
 
     public void newList(){
+
         createListButton.click();
+        log.logInfo("Click on the Create button performed");
     }
 
 
