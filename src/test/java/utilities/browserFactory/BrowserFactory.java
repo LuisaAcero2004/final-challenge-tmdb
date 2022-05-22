@@ -1,4 +1,4 @@
-package utilities;
+package utilities.browserFactory;
 
 public class BrowserFactory {
     String browserName;
@@ -8,6 +8,7 @@ public class BrowserFactory {
 
     }
 
+    //Method to create the selected browser
     public Browser createBrowser(){
         switch(this.browserName){
             case "Chrome":

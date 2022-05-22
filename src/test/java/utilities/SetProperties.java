@@ -14,7 +14,7 @@ public class SetProperties {
     public SetProperties(){
         Properties properties = new Properties();
         try{
-            properties.load(new FileReader("src/main/resources/data.properties.properties.properties"));
+            properties.load(new FileReader("src/test/resources/data.properties"));
         } catch (IOException e) {
             e.printStackTrace();
 
