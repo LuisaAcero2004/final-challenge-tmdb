@@ -13,20 +13,6 @@ public class Listener implements ITestListener {
     Screenshot screenshot = new Screenshot();
 
     @Override
-    public void onStart(ITestContext context){
-        //Start report
-        report = (ReportManager) context.getAttribute("report");
-        report.setUpReport("tests-reports");
-    }
-
-    @Override
-    public void onFinish(ITestContext context) {
-        //Finish report
-        report = (ReportManager) context.getAttribute("report");
-        report.finishReport();
-    }
-
-    @Override
     public void onTestStart(ITestResult iTestResult) {
         ITestContext context = iTestResult.getTestContext();
         report = (ReportManager) context.getAttribute("report");
@@ -46,16 +32,23 @@ public class Listener implements ITestListener {
     @SneakyThrows
     @Override
     public void onTestFailure(ITestResult iTestResult){
-        String pictureName;
+
         ITestContext context = iTestResult.getTestContext();
         WebDriver driver = (WebDriver) context.getAttribute("WebDriver");
-        //Take screenshot
-        pictureName = screenshot.takeScreenshot(driver);
-        report = (ReportManager) context.getAttribute("report");
-        log = (Log) context.getAttribute("log");
-        //Log and send screenshot to report
-        log.logTestFail("Test '" +  iTestResult.getName() + "' execution failed", "\\tests-screenshots\\"+pictureName);
-        log.logInfo("Screenshot saved successfully as '" + pictureName + "'");
+
+        if(driver != null){
+            //Take screenshot
+            String pictureName;
+            pictureName = screenshot.takeScreenshot(driver);
+            report = (ReportManager) context.getAttribute("report");
+            log = (Log) context.getAttribute("log");
+            //Log and send screenshot to report
+            log.logTestFailUI("Test '" +  iTestResult.getName() + "' execution failed: " + iTestResult.getThrowable(), "\\tests-screenshots\\"+pictureName);
+            log.logInfo("Screenshot saved successfully as '" + pictureName + "'");
+        }else{
+            log.logTestFail("Test '" +  iTestResult.getName() + "' execution failed: " +   iTestResult.getThrowable());
+        }
+
     }
 
     @Override

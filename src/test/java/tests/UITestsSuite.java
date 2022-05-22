@@ -3,9 +3,7 @@ package tests;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.ITestContext;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import pages.*;
 import utilities.ReportManager;
 import utilities.browserFactory.Browser;
@@ -15,33 +13,36 @@ import utilities.SetProperties;
 
 public class UITestsSuite {
 
-    private HomePage homePage;
-    private LoginPage loginPage;
-    private UserPage userPage;
-    private ListsPage listsPage;
-    private ListDetailsPage listDetailsPage;
-    private WebDriver driver;
-    private SetProperties setProperties;
+    public HomePage homePage;
+    public LoginPage loginPage;
+    public UserPage userPage;
+    public ListsPage listsPage;
+    public ListDetailsPage listDetailsPage;
+    public WebDriver driver;
+    public String browserExplorer;
     private Log log;
-    private String browserExplorer;
-
-    //Data required to create the list and add the movie
-    private String listName = "This is the name List";
-    private String listDescription = "This is the list drtgg55555gui";
+    private SetProperties setProperties;
+    private ReportManager report;
+    private String listName = "This is the list name";
+    private String listDescription = "This is the desc";
     private String movieName = "La lista de Schindler";
-    private String idMovie = "424";
+    private int idMovie = 424;
 
-    @BeforeSuite
-    public void beforeSuite(ITestContext context){
-        //Selected browser
-        browserExplorer = "Edge";
+    @BeforeClass
+    public void beforeClass(ITestContext context){
         //Create log and report objects
         setProperties = new SetProperties();
         log = new Log();
-        ReportManager report = new ReportManager();
+        report = new ReportManager();
         log.setReport(report);
+
+        //Start report
+        report.setUpReport("tests-reports/" + getClass().getName() + java.time.LocalDateTime.now().toString().replace(":",".") + ".html");
         context.setAttribute("report", report);
         context.setAttribute("log", log);
+
+        //Selected browser
+        browserExplorer = "Edge";
         //Create driver
         BrowserFactory factory = new BrowserFactory(browserExplorer);
         Browser browser = factory.createBrowser();
@@ -62,19 +63,18 @@ public class UITestsSuite {
         loginPage.login(setProperties.getUser(), setProperties.getPassword());
         log.logInfo("Finishing Login");
         log.logInfo("*** STARTING TEST CASES SUITE EXECUTION ***");
-
     }
 
-    @AfterSuite
-    public void afterSuite(){
+    @AfterClass
+    public void afterClass() {
         driver.manage().deleteAllCookies();
         driver.quit();
         log.logInfo("Closing " + browserExplorer + " browser");
-        log.logInfo("*** FINISHING TEST CASES SUITE EXECUTION ***");
+        report.finishReport();
     }
 
     @Test(testName = "Create List")
-    public void createList(){
+    public void createListUI(){
         userPage.goLists();
         listsPage.newList();
         listDetailsPage.createNewList(listName,listDescription);
@@ -83,21 +83,22 @@ public class UITestsSuite {
         log.logInfo("Assertion performed");
     }
 
-    @Test(dependsOnMethods = {"createList"},testName = "Add a movie to a list")
-    public void addMovieList(){
+    @Test(dependsOnMethods = {"createListUI"},testName = "Add a movie to a list")
+    public void addMovieListUI(){
         listDetailsPage.addMovieList(movieName);
         //Assertion to compare the name of the added movie and the variable movieName
         Assert.assertTrue(listDetailsPage.getMovieName().contains(movieName));
         log.logInfo("Assertion performed");
     }
 
-    @Test(dependsOnMethods = {"createList","addMovieList"},testName = "Delete an existing movie in the list")
-    public void deleteMovieList(){
-        listDetailsPage.deleteMovieList(idMovie);
+    @Test(dependsOnMethods = {"createListUI","addMovieListUI"},testName = "Delete an existing movie in the list")
+    public void deleteMovieListUI(){
+        listDetailsPage.deleteMovieList(Integer.toString(idMovie));
         //Assertion to compare the text after deleting the movie and the 'empty list' text
         Assert.assertEquals(listDetailsPage.getResultsContent(),"There are no items added to this list.");
         log.logInfo("Assertion performed");
     }
+
 
 
 }

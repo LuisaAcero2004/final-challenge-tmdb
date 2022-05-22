@@ -23,14 +23,18 @@ public class Log {
         }
     }
 
-
     public void logTestPass(String logMessage){
         logger.info(logMessage);
         report.logPassR(logMessage);
     }
-    public void logTestFail(String logMessage,String path){
+    public void logTestFailUI(String logMessage,String path){
         logger.error(logMessage);
-        report.logFailR(logMessage,path);
+        report.logFailRUI(logMessage,path);
+    }
+
+    public void logTestFail(String logMessage){
+        logger.error(logMessage);
+        report.logFailR(logMessage);
     }
 
     public void logTestSkip(String logMessage){

@@ -16,7 +16,7 @@ public class Screenshot{
         TakesScreenshot scrShot = ((TakesScreenshot)driver);
         File SrcFile = scrShot.getScreenshotAs(OutputType.FILE);
         //Destination directory
-        File DestFile = new File( Paths.get(System.getProperty("user.dir"), "tests-screenshots\\").toString());
+        File DestFile = new File( Paths.get(System.getProperty("user.dir"), "tests-screenshots/").toString());
         //Copy screenshot to selected directory
         FileUtils.copyFileToDirectory(SrcFile,DestFile);
         return SrcFile.getName();

@@ -30,8 +30,12 @@ public class ReportManager {
         test.pass(logMessage);
     }
 
-    public void logFailR(String logMessage, String path){
+    public void logFailRUI(String logMessage, String path){
         test.fail(logMessage, MediaEntityBuilder.createScreenCaptureFromPath(path).build());
+    }
+
+    public void logFailR(String logMessage){
+        test.fail(logMessage);
     }
 
     public void logSkipR(String logMessage){
