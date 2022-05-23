@@ -19,8 +19,8 @@ public class APITestsSuite {
     private ReportManager report;
     private Response response;
 
-    private String listName = "This is the list name";
-    private String listDescription = "This is the desc";
+    private String listName = "This is the list name for API";
+    private String listDescription = "This is the description of the created list for API";
     private int idMovie = 424;
 
     @BeforeClass

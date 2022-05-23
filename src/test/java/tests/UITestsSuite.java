@@ -24,8 +24,8 @@ public class UITestsSuite {
     private SetProperties setProperties;
     private ReportManager report;
 
-    private String listName = "This is the list name";
-    private String listDescription = "Description of the created list";
+    private String listName = "This is the list name for UI";
+    private String listDescription = "This is the description of the created list for UI";
     private String movieName = "La lista de Schindler";
     private int idMovie = 424;
 
