@@ -23,8 +23,9 @@ public class UITestsSuite {
     private Log log;
     private SetProperties setProperties;
     private ReportManager report;
+
     private String listName = "This is the list name";
-    private String listDescription = "This is the desc";
+    private String listDescription = "Description of the created list";
     private String movieName = "La lista de Schindler";
     private int idMovie = 424;
 
@@ -41,8 +42,8 @@ public class UITestsSuite {
         context.setAttribute("report", report);
         context.setAttribute("log", log);
 
-        //Selected browser
-        browserExplorer = "Edge";
+        //Selected browser "Edge" or "Chrome"
+        browserExplorer = "Chrome";
         //Create driver
         BrowserFactory factory = new BrowserFactory(browserExplorer);
         Browser browser = factory.createBrowser();
